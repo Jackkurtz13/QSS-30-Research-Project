@@ -17,3 +17,5 @@ for(i in 6:length(extra)){
 }
 nrow(data2)
 unique(data2$review_decision)
+
+data2 <- subset(data2, review_decision != "")
