@@ -11,5 +11,7 @@ extra
 
 for(i in 6:length(extra)){
   new <- grep(extra[i], data$review_decision)
-  print(new)
+  data2 <- data[-c(new),]
 }
+nrow(data2)
+unique(data2$review_decision)
