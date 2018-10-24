@@ -19,3 +19,8 @@ nrow(data2)
 unique(data2$review_decision)
 
 data2 <- subset(data2, review_decision != "")
+
+
+
+levels(data2$home)
+levels(data2$committing_team)
