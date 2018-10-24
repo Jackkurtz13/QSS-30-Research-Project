@@ -24,3 +24,12 @@ data2 <- subset(data2, review_decision != "")
 
 levels(data2$home)
 levels(data2$committing_team)
+
+grep("ACL", data2$committing_team)
+grep("AT)", data2$committing_team)
+grep("CHi", data2$committing_team)
+grep("COS", data2$committing_team)
+grep("LA)", data2$committing_team)
+grep("NKY", data2$committing_team)
+grep("WSH", data2$committing_team)
+
