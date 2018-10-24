@@ -33,3 +33,12 @@ grep("LA)", data2$committing_team)
 grep("NKY", data2$committing_team)
 grep("WSH", data2$committing_team)
 
+error <- c(grep("ACL", data2$committing_team), grep("AT)", data2$committing_team), grep("CHi", data2$committing_team), grep("COS", data2$committing_team), grep("LA)", data2$committing_team), grep("NKY", data2$committing_team), grep("WSH", data2$committing_team))
+
+error
+
+e1 <- error[1]-5
+e2 <- error[1]
+data2[e1:e2,]
+
+data2[error[1],]$committing_team <- "CLE"
