@@ -42,3 +42,17 @@ e2 <- error[1]
 data2[e1:e2,]
 
 data2[error[1],]$committing_team <- "CLE"
+data2[error[2],]$committing_team <- "ATL"
+
+data2[error[3],]$committing_team <- "CHI"
+
+data2[error[4],]$committing_team <- ""
+
+data2[error[5],]$committing_team <- "LAL"
+
+data2[error[6],]$committing_team <- "NYK"
+
+data2[error[7],]$committing_team <- "WAS"
+
+data2[data2 == ""] <- NA
+
