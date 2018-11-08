@@ -105,3 +105,58 @@ home.team <- (sum(data4$review_decision == "IC") + sum(data4$review_decision == 
 
 
 ```
+
+
+
+
+
+
+
+#Making Post-Season Dataset
+```{r}
+data2$year <- substr(data2$date, start = 1, stop = 4)
+
+data2$month <- substr(data2$date, start = 5, stop = 8)
+data2$month <- as.integer(data2$month)
+
+unique(data2$month)
+
+playoffs15 <- subset(data2, year == 2015 & month >= 418 & month < 701)
+playoffs16 <- subset(data2, year == 2016 & month >= 416 & month < 701)
+playoffs17 <- subset(data2, year == 2017 & month >= 415 & month < 701)
+playoffs18 <- subset(data2, year == 2018 & month >= 414 & month < 701)
+
+nrow(playoffs15)
+nrow(playoffs16)
+nrow(playoffs17)
+nrow(playoffs18)
+
+sum(nrow(playoffs15) + nrow(playoffs16) + nrow(playoffs17) + nrow(playoffs18))
+
+playoffs <- rbind(playoffs15, playoffs16, playoffs17, playoffs18)
+
+```
+
+
+
+#Making Regular Season Dataset
+```{r}
+
+regular15 <- subset(data2, year == 2015 & (month < 418 | month > 701))
+regular16 <- subset(data2, year == 2016 & (month < 416 | month > 701))
+regular17 <- subset(data2, year == 2017 & (month < 415 | month > 701))
+regular18 <- subset(data2, year == 2018 & (month < 414 | month > 701))
+
+nrow(regular15)
+nrow(regular16)
+nrow(regular17)
+nrow(regular18)
+
+sum(nrow(regular15) + nrow(regular16) + nrow(regular17) + nrow(regular18))
+
+regular <- rbind(regular15, regular16, regular17, regular18)
+
+```
+
+
+
