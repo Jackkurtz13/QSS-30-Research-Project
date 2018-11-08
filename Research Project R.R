@@ -56,3 +56,52 @@ data2[error[7],]$committing_team <- "WAS"
 
 data2[data2 == ""] <- NA
 
+
+
+
+
+
+
+
+## Statistical Testing
+```{r}
+data3 <- c(data2$review_decision, data2$away, data2$home, data2$committing_team, data2$disadvantaged_team)
+
+
+
+data3 <- data2[,c("review_decision", "away", "home", "committing_team", "disadvantaged_team")]
+
+data3 <- na.omit(data3)
+
+levels(data3$home)
+levels(data3$committing_team)
+
+data3$committing_team <- droplevels(data3$committing_team)
+
+levels(data3$committing_team)
+
+data3$match <- ifelse(data3$home == data3$committing_team, 1, 0)
+
+# Home Team commits foul
+data4 <- subset(data3, match == 1)
+
+(sum(data4$review_decision == "IC") + sum(data4$review_decision == "INC"))
+
+(sum(data4$review_decision == "CC") + sum(data4$review_decision == "CNC"))
+
+# Away Team commits foul
+data5 <- subset(data3, match == 0)
+
+(sum(data5$review_decision == "IC") + sum(data5$review_decision == "INC"))
+
+(sum(data5$review_decision == "CC") + sum(data5$review_decision == "CNC"))
+
+
+# Diff in prop
+
+# make table
+
+home.team <- (sum(data4$review_decision == "IC") + sum(data4$review_decision == "INC"))
+
+
+```
