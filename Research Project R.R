@@ -97,11 +97,22 @@ data5 <- subset(data3, match == 0)
 (sum(data5$review_decision == "CC") + sum(data5$review_decision == "CNC"))
 
 
-# Diff in prop
-
 # make table
 
+#home team benefits from incorrect call 
 home.team <- (sum(data4$review_decision == "IC") + sum(data4$review_decision == "INC"))
+
+#away team benefits from incorrect call
+away.team <- (sum(data5$review_decision == "IC") + sum(data5$review_decision == "INC"))
+
+test_table<- rbind(1085,1081) 
+
+
+#chi-square test
+chisq.test(test_table)
+
+
+
 
 
 ```
