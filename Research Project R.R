@@ -111,6 +111,16 @@ test_table<- rbind(1085,1081)
 #chi-square test
 chisq.test(test_table)
 
+#broken down by calls and non calls 
+
+test.calls <- rbind(c(.0359,.9641), c(.0365,.9634))
+
+test.noncalls <- rbind(c(.1124,.8876), c(.1114,.8886))
+
+#tests for calls and noncalls 
+
+chisq.test(test.calls)
+chisq.test(test.noncalls)
 
 
 
