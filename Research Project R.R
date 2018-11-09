@@ -207,3 +207,44 @@ regular <- rbind(regular15, regular16, regular17, regular18)
 
 
 
+
+
+
+# Distinguishing between "Calls" and "Non-Calls" for Home Team
+```{r}
+away.ic2 <- sum(data4$review_decision == "IC")/(sum(data4$review_decision == "IC") + sum(data4$review_decision == "CC"))
+away.ic2*100
+
+away.cc2 <- sum(data4$review_decision == "CC")/(sum(data4$review_decision == "IC") + sum(data4$review_decision == "CC"))
+away.cc2*100
+
+
+
+away.inc2 <- sum(data4$review_decision == "INC")/(sum(data4$review_decision == "INC") + sum(data4$review_decision == "CNC"))
+away.inc2*100
+
+away.cnc2 <- sum(data4$review_decision == "CNC")/(sum(data4$review_decision == "INC") + sum(data4$review_decision == "CNC"))
+away.cnc2*100
+```
+
+
+# Distinguishing between "Calls" and "Non-Calls" for Away Team
+```{r}
+away.ic2 <- sum(data5$review_decision == "IC")/(sum(data5$review_decision == "IC") + sum(data5$review_decision == "CC"))
+away.ic2*100
+
+away.cc2 <- sum(data5$review_decision == "CC")/(sum(data5$review_decision == "IC") + sum(data5$review_decision == "CC"))
+away.cc2*100
+
+
+
+away.inc2 <- sum(data5$review_decision == "INC")/(sum(data5$review_decision == "INC") + sum(data5$review_decision == "CNC"))
+away.inc2*100
+
+away.cnc2 <- sum(data5$review_decision == "CNC")/(sum(data5$review_decision == "INC") + sum(data5$review_decision == "CNC"))
+away.cnc2*100
+```
+
+
+
+
