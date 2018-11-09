@@ -150,6 +150,42 @@ playoffs <- rbind(playoffs15, playoffs16, playoffs17, playoffs18)
 
 
 
+
+
+
+
+playoffs2 <- playoffs[,c("review_decision", "away", "home", "committing_team", "disadvantaged_team")]
+
+playoffs2 <- na.omit(playoffs2)
+
+levels(playoffs2$home)
+levels(playoffs2$committing_team)
+
+playoffs2$committing_team <- droplevels(playoffs2$committing_team)
+
+levels(playoffs2$committing_team)
+unique(playoffs2$committing_team)
+unique(playoffs2$home)
+
+playoffs2$match <- ifelse(playoffs2$home == playoffs2$committing_team, 1, 0)
+
+
+
+# Home Team commits foul
+playoffs.home <- subset(playoffs, match == 1)
+
+
+# Away Team commits foul
+playoffs.away <- subset(playoffs, match == 0)
+
+```
+
+
+
+
+
+
+
 #Making Regular Season Dataset
 ```{r}
 
